@@ -1,0 +1,8 @@
+---
+layout: null
+---
+{ "articles": [
+{% for article in site.articles %}
+	{ "date": {{ article.date | date: "%Y-%m-%d" | jsonify }}, "url": {{ article.link | jsonify }} }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+] }
