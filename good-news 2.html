@@ -1,0 +1,8 @@
+---
+title: Good News
+---
+<ul>
+{% for article in site.data.good_news reversed %}
+  <li>{{ article.date }} — <a href="{{ article.url }}">{{ article.url }}</a></li>
+{% endfor %}
+</ul>
