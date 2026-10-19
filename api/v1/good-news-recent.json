@@ -1,10 +1,4 @@
 ---
 layout: null
-limit: 10
 ---
-{% assign recent = site.articles | sort: "date" | reverse %}
-{ "articles": [
-{% for article in recent limit: page.limit %}
-	{ "date": {{ article.date | date: "%Y-%m-%d" | jsonify }}, "url": {{ article.link | jsonify }} }{% unless forloop.last %},{% endunless %}
-{% endfor %}
-] }
+{% include articles.json limit=10 %}
