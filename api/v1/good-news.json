@@ -1,8 +1,9 @@
 ---
 layout: null
 ---
+{% assign all = site.articles | sort: "date" | reverse %}
 { "articles": [
-{% for article in site.articles %}
+{% for article in all %}
 	{ "date": {{ article.date | date: "%Y-%m-%d" | jsonify }}, "url": {{ article.link | jsonify }} }{% unless forloop.last %},{% endunless %}
 {% endfor %}
 ] }

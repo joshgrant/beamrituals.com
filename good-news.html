@@ -1,8 +1,9 @@
 ---
 title: Good News
 ---
+{% assign articles = site.articles | sort: "date" | reverse %}
 <ul>
-{% for article in site.data.good_news reversed %}
-  <li>{{ article.date }} — <a href="{{ article.url }}">{{ article.url }}</a></li>
+{% for article in articles %}
+  <li>{{ article.date | date: "%Y-%m-%d" }} — <a href="{{ article.link }}">{{ article.link }}</a></li>
 {% endfor %}
 </ul>
